@@ -33,7 +33,7 @@ function loadPdf(adobeDCView, viewerConfig) {
         document.querySelector('#navi-bar').classList.add('hidden');
         document.querySelector('#viewer').classList.remove('hidden');
         fileLoad = fileToLoad.files[0];
-        displayPdfInLineView();
+        displayPdfInFullWindowView();
 
     })
 
