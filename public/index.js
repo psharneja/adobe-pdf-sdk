@@ -55,7 +55,7 @@ $('#in-line-btn').click(function () {
 	
 });
 
-function trackPdfEvents(adobeDCView) {
+function trackEvents(adobeDCView) {
 	adobeDCView.registerCallback(AdobeDC.View.Enum.CallbackType.EVENT_LISTENER, function (event) {
 		switch (event.type) {
 			case "DOCUMENT_OPEN":
