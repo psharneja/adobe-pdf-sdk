@@ -1,3 +1,5 @@
+var fileToLoad = document.querySelector('#file-upload');
+
 let viewerConfig = {
 		"defaultViewMode": "FIT_PAGE",
 		"embedMode": "IN_LINE"
@@ -20,10 +22,9 @@ function loadPdf(file) {
 		reader.readAsArrayBuffer(file);
         
 }
-    var fileToLoad = document.querySelector('#file-upload');
+
     fileToLoad.addEventListener('change', ev => {
-        console.log(fileToLoad.files);
         document.querySelector('#navi-bar').classList.add('hidden');
-        document.querySelector('#loader').classList.remove('hidden');
+        document.querySelector('#viewer').classList.remove('hidden');
         loadPdf(fileToLoad.files[0]);
     })
