@@ -19,5 +19,5 @@ To link the package as global to your system, do:
 
 Anywhere on your system, do the following:
 
-pdf_creator <arg1-path-to-zip-containing-html> <arg2-path-to-save-pdf>
+pdf_creator 'arg1-path-to-zip-containing-html' 'arg2-path-to-save-pdf'
 
