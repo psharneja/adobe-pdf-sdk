@@ -9,20 +9,23 @@
   </head>
   <body class="wrapper">
     <div id="viewer" class="container-fluid hidden">
-      <div class="row" style="padding:7px">
-         <div class="col col-xs-12 col-sm-12 col-md-3">
-            <button type="button" class="btn btn-dark btn-md custom-btn disabled" id="full-window-btn">FULL WINDOW</button>
+      <div class="row justify-content-center" style="padding:7px" >
+         <div class="col col-xs-12 col-sm-12 col-md-4">
+            <button type="button" class="btn btn-dark btn-md custom-btn " id="full-window-btn">Full Window</button>
          </div>
-         <div class="col col-xs-12 col-sm-6 col-md-3">
-            <button type="button" class="btn btn-dark btn-md custom-btn disabled" id="sized-container-btn">SIZED CONTAINER</button>
+         <div class="col col-xs-12 col-sm-6 col-md-4">
+            <button type="button" class="btn btn-dark btn-md custom-btn " id="sized-container-btn">Sized Container</button>
          </div>
-         <div class="col col-xs-12 col-sm-6 col-md-3">
-            <button type="button" class="btn btn-dark btn-md custom-btn disabled" id="in-line-btn">IN LINE</button>
+         <div class="col col-xs-12 col-sm-6 col-md-4">
+            <button type="button" class="btn btn-dark btn-md custom-btn " id="in-line-btn">In-line</button>
          </div>
       </div>
-      <div id="loader" class=" row justify-content-center" >
-      </div>
-      </div>
+      <div id="loader"  class="row justify-content-center" style="height:84vh">
+        <div class="col col-xs-12 hidden" id="adobe-dc-full-window"></div>
+        <div class="col col-md-6 text-center hidden" id="adobe-dc-sized-container"></div>
+        <div class="col col-md-6 hidden" id="adobe-dc-in-line"></div>
+     </div>
+     </div>
     <nav id="navi-bar" class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">select a pdf file to view</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
