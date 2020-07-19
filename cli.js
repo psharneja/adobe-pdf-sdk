@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const path = require('path');
 const PDFToolsSdk = require('@adobe/documentservices-pdftools-node-sdk');
+
+
 
 
     if(process.argv.length < 4){
@@ -29,7 +30,7 @@ try {
     // create credentials instance.
     const credentials =  PDFToolsSdk.Credentials
         .serviceAccountCredentialsBuilder()
-        .fromFile("./config/pdftools-api-credentials.json")
+        .fromFile(`${__dirname}/config/pdftools-api-credentials.json`)
         .build();
 
     // Create an ExecutionContext using credentials and create a new operation instance.
