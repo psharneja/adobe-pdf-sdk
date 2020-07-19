@@ -21,3 +21,6 @@ Anywhere on your system, do the following:
 
 pdf_creator 'arg1-path-to-zip-containing-html' 'arg2-path-to-save-pdf'
 
+
+one static html zip named Archive.zip is already added.
+
