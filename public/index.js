@@ -12,6 +12,35 @@ const profile = {
 	}
 }
 
+function trackEvents(adobeDCView) {
+	adobeDCView.registerCallback(AdobeDC.View.Enum.CallbackType.EVENT_LISTENER, function (event) {
+		switch (event.type) {
+			case "DOCUMENT_OPEN":
+				gtag('event', 'DOCUMENT_OPEN', {
+					'event_label': 'DOCUMENT_OPEN'
+				});
+				break;
+			case 'PAGE_VIEW':
+				gtag('event', 'PAGE_VIEW', {
+					'event_label': 'PAGE_VIEW'
+				});
+				break;
+			case 'DOCUMENT_DOWNLOAD':
+				gtag('event', 'DOCUMENT_DOWNLOAD', {
+					'event_label': 'DOCUMENT_DOWNLOAD'
+				});
+				break;
+			case 'TEXT_COPY':
+				gtag('event', 'TEXT_COPY', {
+					'event_label': 'TEXT_COPY'
+				});
+				break;
+		}
+	}, {
+		enablePDFAnalytics: true
+	});
+}
+
 function loadPdf(adobeDCView, viewerConfig) {
             var reader = new FileReader();
             reader.onloadend = function (e) {
@@ -55,34 +84,7 @@ $('#in-line-btn').click(function () {
 	
 });
 
-function trackEvents(adobeDCView) {
-	adobeDCView.registerCallback(AdobeDC.View.Enum.CallbackType.EVENT_LISTENER, function (event) {
-		switch (event.type) {
-			case "DOCUMENT_OPEN":
-				gtag('event', 'DOCUMENT_OPEN', {
-					'event_label': 'DOCUMENT_OPEN'
-				});
-				break;
-			case 'PAGE_VIEW':
-				gtag('event', 'PAGE_VIEW', {
-					'event_label': 'PAGE_VIEW'
-				});
-				break;
-			case 'DOCUMENT_DOWNLOAD':
-				gtag('event', 'DOCUMENT_DOWNLOAD', {
-					'event_label': 'DOCUMENT_DOWNLOAD'
-				});
-				break;
-			case 'TEXT_COPY':
-				gtag('event', 'TEXT_COPY', {
-					'event_label': 'TEXT_COPY'
-				});
-				break;
-		}
-	}, {
-		enablePDFAnalytics: true
-	});
-}
+
 
 
 function displayPdfInSizedContainerView() {
