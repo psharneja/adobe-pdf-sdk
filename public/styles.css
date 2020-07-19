@@ -1,0 +1,16 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .wrapper {
+    background: linear-gradient(to right, #1976d2, #303f9f);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.hidden {
+    display: none;
+}

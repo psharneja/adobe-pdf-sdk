@@ -3,7 +3,6 @@ const PDFToolsSdk = require('@adobe/documentservices-pdftools-node-sdk');
 
 
 
-
     if(process.argv.length < 4){
     console.warn('MISSING ARGUMENTS: Exception encountered while executing operation, missing arguments');
     process.exit(1)
