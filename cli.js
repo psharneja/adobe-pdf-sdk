@@ -1,15 +1,10 @@
 #!/usr/bin/env node
+
 const PDFToolsSdk = require('@adobe/documentservices-pdftools-node-sdk');
-
-
-
-    if(process.argv.length < 4){
-    console.warn('MISSING ARGUMENTS: Exception encountered while executing operation, missing arguments');
-    process.exit(1)
+    if(process.argv.length < 4) {
+        showError(1000)
 }  
   const [,, ...argv] = process.argv;
-
-
 
 //setting pdf configs
 const pdfConfigs = (htmlToPDFOperation) => {
@@ -23,7 +18,21 @@ const pdfConfigs = (htmlToPDFOperation) => {
     htmlToPDFOperation.setOptions(htmlToPdfOptions);
 };
 
+function showError(error = 999) {
+    let msg;
+    if(error === 400) {
+        msg = 'Please make sure there is an "index.html" and static assets  present in the zip file you passed';
+    } else if (error === 999) {
+        msg = `There seems to be an issue. The filename you passed doesn't exist. consider doing a spellcheck once.`;
+    } else if (error === 1000){
+        msg = 'Please pass the path to zip file containing html and pdf save location as arguments 1 and 2 respectively';
+    } else {
+        msg = error;
+    }
+    console.warn(`ERROR: ${msg}`);
+    process.exit(0);
 
+}
 
 try {
     // create credentials instance.
@@ -49,11 +58,11 @@ try {
         .catch(err => {
             if(err instanceof PDFToolsSdk.Error.ServiceApiError
                 || err instanceof PDFToolsSdk.Error.ServiceUsageError) {
-                console.log('Exception encountered while executing operation', err);
+                showError(err.statusCode);
             } else {
-                console.log('Exception encountered while executing operation', err);
+                showError(err.statusCode);
             }
         });
 } catch (err) {
-    console.log('Exception encountered while executing operation', err);
+    showError(err)
 }

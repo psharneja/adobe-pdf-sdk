@@ -1,0 +1,21 @@
+{
+    "appenders": {
+      "consoleAppender": {
+              "_comment": "CLI",
+        "type": "console",
+        "layout": {
+          "type": "pattern",
+          "pattern": "%d:[%p]: %m"
+        }
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": [
+          "consoleAppender"
+              ],
+              "_comment": "CLI",
+        "level": "info"
+      }
+    }
+  }

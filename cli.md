@@ -4,7 +4,7 @@
 
 *cli.js
 *config/pdftools-api-credentials.json
-
+*config/pdftools-sdk-log4js-config.json
 ## Installation
 
 * npm install // to install dependencies
